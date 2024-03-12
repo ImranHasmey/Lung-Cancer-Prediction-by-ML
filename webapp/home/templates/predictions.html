@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- basic -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- mobile metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+  <!-- site metas -->
+  <title>CANCER</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <!-- bootstrap css -->
+  <link rel="stylesheet" href="/static/home/css/bootstrap.min.css">
+  <!-- style css -->
+  <link rel="stylesheet" href="/static/home/css/style.css">
+  <!-- Responsive-->
+  <link rel="stylesheet" href="/static/home/css/responsive.css">
+  <!-- fevicon -->
+  <link rel="icon" href="/static/home/images/fevicon.png" type="image/gif" />
+  <!-- Scrollbar Custom CSS -->
+  <link rel="stylesheet" href="/static/home/css/jquery.mCustomScrollbar.min.css">
+  <!-- Tweaks for older IEs-->
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3//static/home/css/font-awesome.css">
+  <!-- owl stylesheets -->
+  <link rel="stylesheet" href="/static/home/css/owl.carousel.min.css">
+  <link rel="stylesheet" href="/static/home/css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css"
+    media="screen">
+</head>
+
+<body>
+  <!-- header section start -->
+  <div class="header_section">
+    <nav class="destop_header navbar navbar-expand-lg navbar-light bg-light">
+      <div class="logo"></div>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="upload">upload</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="train">model training</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="predictions">predictions</a>
+	<li class="nav-item">
+            <a class="nav-link" href="Accuracy">Accuracy</a>
+          </li>
+          </li>
+          <li class="nav-item active">
+
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- header section end -->
+    <!-- banner section start -->
+    <div class="banner_section">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-6 padding_0">
+            <div id="main_slider" class="carousel slide" data-ride="carousel">
+              
+                <div class="carousel-item active">
+                  <div class="banner_bg">
+                    <div class="banner_taital_main">
+                      <div class="container p-5" style="padding-top: 95px;"></div>
+                      <center>
+                        <h1
+                          style="color: black; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+                          {{msg1}}</h1>
+                      </center>
+
+                      <div class="col-md-12">
+                        <form action="{% url 'predictions' %}" method="post">
+                          {% csrf_token %}
+                          <center>
+                            <h2 style="color:black" style="margin-left: 20px;">{{msg|safe}}</h2>
+                          </center><br><br>
+                          <center>
+                            <table>
+                              <tr>
+                                <td><label style="color: black;">GENDER</label>
+                                  <input type="float" name="f1" placeholder="GENDER"><br><br>
+                                </td>
+
+                                <td> <label style="color: black;">AGE</label>
+                                  <input type="float" name="f2" placeholder="AGE"><br><br>
+                                </td>
+                              
+                              <td><label style="color: black;">SMOKING</label>
+                                <input type="float" name="f3" placeholder="SMOKING"><br><br>
+                              </td>
+
+                              <td><label style="color: black;">YELLOW_FINGERS</label>
+                                <input type="flaot" name="f4" placeholder="YELLOW_FINGERS"><br><br>
+                              </td>
+                              </tr>
+                              <tr>
+                              <td><label style="color: black;">ANXIETY</label>
+                                <input type="float" name="f5" placeholder="ANXIETY"><br><br>
+                              </td>
+                                <td><label style=" color: black;">PEER_PRESSURE</label>
+                                  <input type="float" name="f6" placeholder="PEER_PRESSURE"><br><br>
+                                </td>
+
+                                <td><label style="color: black;">CHRONIC</label>
+                                  <input type="flaot" name="f7" placeholder="CHRONIC"><br><br>
+                                </td>
+                              
+                              <td><label style="color: black;">FATIGUE</label>
+                                <input type="float" name="f8" placeholder="FATIGUE"><br><br>
+                              </td>
+                            </tr>
+                              <td><label style="color: black;">ALLERGY</label>
+                                <input type="float" name="f9" placeholder="ALLERGY"><br><br>
+                              </td>
+                              
+                              <td><label style="color: black;">WHEEZING</label>
+                                <input type="float" name="f10" placeholder="WHEEZING"><br><br>
+                              </td>
+
+                              <td><label style="color: black;">ALCOHOL</label>
+                                <input type="float" name="f11" placeholder="ALCOHOL"><br><br>
+                              </td>
+                              
+                              <td><label style="color: black;">COUGHING</label>
+                                <input type="float" name="f12" placeholder="COUGHING"><br><br>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><label style="color: black;">SHORTNESS</label>
+                                <input type="float" name="f13" placeholder="SHORTNESS"><br><br>
+                              </td>
+                              
+                              <td><label style="color: black;">SWALLOWING</label>
+                                <input type="float" name="f14" placeholder="SWALLOWING"><br><br>
+                              </td>
+
+                              <td><label style="color: black;">CHEST_PAIN</label>
+                                <input type="float" name="f15" placeholder="CHEST_PAIN"><br><br>
+                              </td>
+                              </tr>
+                            </table><br>
+                            <center><input type="submit" style="margin-left: 50px;"><br></center>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- banner section end -->
+          <!-- copyright section end -->
+          <!-- Javascript files-->
+          <script src="/static/home/js/jquery.min.js"></script>
+          <script src="/static/home/js/popper.min.js"></script>
+          <script src="/static/home/js/bootstrap.bundle.min.js"></script>
+          <script src="/static/home/js/jquery-3.0.0.min.js"></script>
+          <script src="/static/home/js/plugin.js"></script>
+          <!-- sidebar -->
+          <script src="/static/home/js/jquery.mCustomScrollbar.concat.min.js"></script>
+          <script src="/static/home/js/custom.js"></script>
+          <!-- javascript -->
+          <script src="/static/home/js/owl.carousel.js"></script>
+          <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+</body>
+
+</html>
